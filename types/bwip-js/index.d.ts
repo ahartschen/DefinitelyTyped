@@ -2,6 +2,7 @@
 // Project: https://github.com/metafloor/bwip-js
 // Definitions by: TANAKA Koichi <https://github.com/MugeSo>
 //                 Guillaume VanderEst <https://github.com/gvanderest>
+//                 Austin Hartschen <https://github.com/ahartschen>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
 /// <reference types="node" />
@@ -11,6 +12,8 @@ import { IncomingMessage as Request, ServerResponse as Response } from 'http';
 declare namespace BwipJs {
     export function loadFont(fontName:string, sizeMulti: number, fontFile: string): void;
     export function toBuffer(opts: ToBufferOptions, callback:(err: string|Error, png: Buffer) => void): void;
+    export function toCanvas(canvas: string | HTMLCanvasElement, opts: ToBufferOptions, callback:(err: string|Error, canvas?: HTMLCanvasElement) => void): void;
+    
     interface ToBufferOptions {
         bcid: string;
         text: string;
